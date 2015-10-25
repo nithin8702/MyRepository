@@ -1,5 +1,0 @@
-MetsWeb.Models
-MetsWeb.Common
-MetsWeb.Repositories
-MetsWeb.Service
-MetsWeb.Console
