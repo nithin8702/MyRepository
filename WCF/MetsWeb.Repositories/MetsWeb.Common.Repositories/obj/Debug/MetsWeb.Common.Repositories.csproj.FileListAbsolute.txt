@@ -1,0 +1,6 @@
+C:\Nithin\Trainings\MVC\Samples\BNP\MetsWeb.Repositories\MetsWeb.Common.Repositories\bin\Debug\MetsWeb.Common.Repositories.dll.config
+C:\Nithin\Trainings\MVC\Samples\BNP\MetsWeb.Repositories\MetsWeb.Common.Repositories\bin\Debug\MetsWeb.Common.Repositories.dll
+C:\Nithin\Trainings\MVC\Samples\BNP\MetsWeb.Repositories\MetsWeb.Common.Repositories\bin\Debug\MetsWeb.Common.Repositories.pdb
+C:\Nithin\Trainings\MVC\Samples\BNP\MetsWeb.Repositories\MetsWeb.Common.Repositories\obj\Debug\MetsWeb.Common.Repositories.csprojResolveAssemblyReference.cache
+C:\Nithin\Trainings\MVC\Samples\BNP\MetsWeb.Repositories\MetsWeb.Common.Repositories\obj\Debug\MetsWeb.Common.Repositories.dll
+C:\Nithin\Trainings\MVC\Samples\BNP\MetsWeb.Repositories\MetsWeb.Common.Repositories\obj\Debug\MetsWeb.Common.Repositories.pdb

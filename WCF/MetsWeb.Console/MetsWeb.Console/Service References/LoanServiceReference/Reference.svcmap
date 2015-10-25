@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6fdcf97b-64ce-4b63-8ef9-2f48983c0893" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/myservice2/LoanService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LoanService.xsd" MetadataType="Schema" ID="d9d3abc2-5f7a-4533-baf0-46eb5aa3cc79" SourceId="1" SourceUrl="http://localhost/myservice2/LoanService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LoanService.disco" MetadataType="Disco" ID="5d9ce6a9-b3de-4a4b-8deb-087cea088eec" SourceId="1" SourceUrl="http://localhost/myservice2/LoanService.svc?disco" />
+    <MetadataFile FileName="LoanService1.xsd" MetadataType="Schema" ID="0222a8e3-6de4-4697-8e1f-619fb479f39e" SourceId="1" SourceUrl="http://localhost/myservice2/LoanService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LoanService.wsdl" MetadataType="Wsdl" ID="544baf9f-ec8a-41c9-88f9-d06e8836c787" SourceId="1" SourceUrl="http://localhost/myservice2/LoanService.svc?wsdl" />
+    <MetadataFile FileName="LoanService2.xsd" MetadataType="Schema" ID="c5f41193-4b9c-4fcb-8d24-c3817c7cd4d3" SourceId="1" SourceUrl="http://localhost/myservice2/LoanService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
