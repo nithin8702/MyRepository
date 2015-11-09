@@ -1,0 +1,3917 @@
+﻿<!--<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>-->
+<!--<script src="C:\Nithin\ThinkVidya\Ameer\Mvc\ControlsDemo\ControlsDemo\Scripts\jquery-1.7.1.min.js"></script>-->
+<p>Client from Api</p>
+<script src="Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    console.log(document.domain);
+    //debugger;
+
+    var url = "http://localhost:28472/";
+
+    ////Live - Client Url
+    ////url = "http://www.uniteeky.com/";
+
+
+
+
+    /*
+    //This api will be used in User Registration
+    ////Get - Tenant Details - It will return all tenants added by branchadmin with token(use this token in ajax headers)
+
+    url = url + "api/tenant";
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    //Only Branch Admin can add tenants
+    //////Add Tenant
+    var ApiViewModel = {
+        custom: {
+            TenantName: "Tenant2",
+            DisplayName: "Tenant 2"
+        },
+        Token: "90c30c60-9ec7-4451-adf8-05452b22f0ca0f59668f-7816-4420-9a8c-31fc397bb358"
+    }
+    url = url + "api/tenant";
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "7de47744-e6dc-433d-960a-5d0f82edce70a98d110a-8a7a-4ed6-bd33-a26906824b7c"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+    /*
+    //Only Branch Admin can update tenants
+    //////Add Tenant
+    var ApiViewModel = {
+        custom: {
+            TenantId: 2,
+            DisplayName: "Tenant 21"
+        },
+        Token: "5fde9a72-e79b-47b3-bf58-616f11a4eee4d4b4a80a-875f-40ce-88b2-535ccd9a8b63"
+    }
+    url = url + "api/tenant";
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "1a4d07b2-b94d-402b-a235-5a77828c422cbe18b03a-4976-4936-b5d2-26092403b2f0"
+        },
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+    /*
+    //Only Branch Admin can delete tenants
+    //////Add Tenant
+    var ApiViewModel = {
+        custom: {
+            TenantId: 2
+        },
+        Token: "5fde9a72-e79b-47b3-bf58-616f11a4eee4d4b4a80a-875f-40ce-88b2-535ccd9a8b63"
+    }
+    url = url + "api/tenant";
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "1a4d07b2-b94d-402b-a235-5a77828c422cbe18b03a-4976-4936-b5d2-26092403b2f0"
+        },
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Post - Login
+    var ApiViewModel = {
+        custom: {
+            UserName: "1facultytest",
+            Password: "1234567"
+        }
+    }
+    url = url + "api/login"; // Tenant Token Not needed
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+            //alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    //////Add User
+    var ApiViewModel = {
+        custom: {
+            UserName: "f16",
+            Password: "admin@123",
+            FirstName: "User 1",
+            LastName: "User 1",
+            RefId: "123",
+            Gender: "Male",
+            EmailAddress: "user1@abc.com",
+            AccountType: "Faculty",//Student//Faculty //Admin
+            CollegeId: 1,
+            DepartmentId: 1,
+            DOB: new Date(),
+            Contact: "1234",
+            ProfilePicturePath: "http://www.acku.co/UploadedFiles/5/24ac7bf9-6376-4966-8325-256cbfb10fa5/image1.jpg;http://www.acku.co/UploadedFiles/5/24ac7bf9-6376-4966-8325-256cbfb10fa5/image2.jpg",
+            DeviceType: "ANDRIOD",
+            DeviceUDDI: "fab854da-7300-407f-9e19-8f9ef4dae3039b453c37-6a9b-4151-a377-72dfb2dd378e"
+        },
+        Token: "e5d46b62-269c-4465-b60a-48ba08afd290a1ea079b-76fc-4a12-bbb2-0011704def53" //Root Admin Token is need to create admin users else not needed
+    }
+    url = url + "api/university";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            alert(data);
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            alert(x);
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ///////Add Dummy Colleges
+    var ApiViewModel = {
+        custom: {
+            CollegeName: "c3", DepartmentName: "d1", Timing: "T1", Location: "L1", ClassRoomNo: "CR1", Link: "L1", BuildingNo: "B1", Notes: "N1"
+        },
+        Token: "ed4b50c1-1048-4fd1-b5e7-a837b442e332d7904b14-185b-47e5-a8e1-f219a6efce8a"//"82109fd5-7559-4e5c-938a-8142012129207904b4aa-4509-42f8-bd6e-1bc94d0c9f9e"
+    }
+    url = url + "api/dummycollege";
+    $.ajax({
+        url: url,
+        headers:{
+            Token: "0fd89278-5182-4d89-a6a3-8f4e58cd73e975c2f002-402b-475a-a180-5ee955ae6adc"//"9138d1e4-35fa-43b6-a6ca-e7d33477fc8d50606e85-30f3-430d-b76e-a80b2d5bc9b9"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+    /*
+    //Profile
+
+    var ApiViewModel = {
+        custom: {
+            ApplicationUserId:100,
+        },
+        Token: "970f5755-3239-4c0a-b3b9-9148ffb2a8bfb78d238e-4468-486f-94a0-403593502454"
+    }
+    url = url + "api/profile";
+
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    //Statictics
+
+    var ApiViewModel = {
+        Token: "7334c6f0-c0f8-421f-a8f9-7b4fde9047e098a82884-22d8-492f-9e4a-66eb8a9d042b"
+    }
+    url = url + "api/Statistics";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    //Reset Password by Admin
+    var ApiViewModel = {
+        custom: {
+            UserName: "1facultytest"
+        },
+        Token: "7334c6f0-c0f8-421f-a8f9-7b4fde9047e098a82884-22d8-492f-9e4a-66eb8a9d042b"
+    }
+    url = url + "api/ResetUserPassword";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+
+    /*
+    //////Change User pwd
+    var ApiViewModel = {
+        custom: {
+            UserName: "branchadmin",
+            OldPassword: "branchadmin@123",
+            NewPassword: "branchadmin@1234"
+        },
+        Token: "32e4428c-3d58-456f-9a1f-ac01eb909327"
+    }
+    url = url + "api/university";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "53c7119d-b94e-4f10-9c94-3f98e697c801" // Tenant Token
+        },
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+
+    /*
+    var ApiViewModel = {
+        Token: "7d461848-ba60-4021-a7f5-f40720c42dc86981a6b1-024d-4854-a90d-dac30f1ae5ab" // token returned from user registration
+    }
+    ////Get Security Questions for Registration
+    url = url + "api/SecurityQuestions";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+
+    /*
+    ////Post - Security Answers
+    var question1 = { QuestionId: 1, Answer: "answer 1" };
+    var question2 = { QuestionId: 2, Answer: "answer 2" };
+    var arr = [];
+    arr.push(question1);
+    arr.push(question2);
+    var ApiViewModel = {
+        custom:arr,
+        Token: "d35f56d1-05a5-4c23-ab2b-a235b57de53fe01c50f0-6729-4bef-9ecf-f154e167f0cb"// Token from add user api
+    }
+    url = url + "api/SecurityAnswers";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "58800086-423d-488a-8865-aa7b5f546fdcb20db040-93fb-4fbb-ad6f-8f04a384d046"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+    /*
+    ////Forgot Password Get Security Questions
+    var ApiViewModel = {
+        custom: {
+            UserName: "faculty13"
+        }
+    }
+    url = url + "api/UsersSecurity";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "58800086-423d-488a-8865-aa7b5f546fdcb20db040-93fb-4fbb-ad6f-8f04a384d046"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Forgot Password Validate Security Answers
+    var question1 = { QuestionId: 1, Answer: "asdf" };
+    var question2 = { QuestionId: 7, Answer: "asdf" };
+    var arr = [];
+    arr.push(question1);
+    arr.push(question2);
+    var ApiViewModel = {
+        custom: {
+            UserName: "student1",
+            Year: 2015,
+            Month: 02,
+            Day: 10,
+            Questions: arr
+        }
+    }
+    url = url + "api/ForgotPassword";
+    $.ajax({
+        url: url,//Tenant Token not needed
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger; // temporary pasword and token - pass this password and token in change password ajax call with new password
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+
+    /*
+    ////Post - Get Faculty Users who are not autheticated yet.
+    var ApiViewModel = {
+        Token: "970f5755-3239-4c0a-b3b9-9148ffb2a8bfb78d238e-4468-486f-94a0-403593502454"
+    }
+    url = url + "api/AuthenticateUsers";
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075" // Tenant Token
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Put - Reject faculty users
+    var ApiViewModel = {
+        custom: {
+            UserId: 98
+        },
+        Token: "970f5755-3239-4c0a-b3b9-9148ffb2a8bfb78d238e-4468-486f-94a0-403593502454"
+    }
+    url = url + "api/AuthenticateUsers";
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075" // Tenant Token
+        },
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Activate Faculty
+    var ApiViewModel = {
+        custom: {
+            AuthenticateToken: "8853a5e2-d9fb-4e60-9db9-1db5fb1ab302" //Faculty Token
+        },
+        Token: "6d4903fb-759e-40e0-a0cf-5e636bcf5fe8" //Admin Token
+    }
+    url = url + "api/FacultyAuthentication";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+            //alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+
+    /*
+    ////Activate Student
+    var ApiViewModel = {
+        custom: {
+            AuthenticateToken: "81f1e2c9-4777-455f-a260-84f7c63d4b632013a66c-09a7-421b-a1f6-8e693d5e8ff6" //Student Token
+        }
+    }
+    url = url + "api/StudentAuthentication";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+            //alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+
+    /*
+    ///////Add College
+    var ApiViewModel = {
+        custom: {
+            CollegeName: "College 3"
+        },
+        Token: "020990da-e5fc-4729-8e3a-392c4692ae1a7e1232a0-01c4-4476-b870-e2695c6d6d22"//"82109fd5-7559-4e5c-938a-8142012129207904b4aa-4509-42f8-bd6e-1bc94d0c9f9e"
+    }
+    url = url + "api/college";
+    $.ajax({
+        url: url,
+        headers:{
+            Token: "6ecb4fc9-4853-41d9-b215-909aaf3e7bebb67a9d8a-d232-4cf3-b1a0-5f528ab13ab7"//"9138d1e4-35fa-43b6-a6ca-e7d33477fc8d50606e85-30f3-430d-b76e-a80b2d5bc9b9"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////////Update College
+    var ApiViewModel = {
+        custom: {
+            CollegeId: 2,
+            CollegeName: "New",
+
+        },
+        Token: "020990da-e5fc-4729-8e3a-392c4692ae1a7e1232a0-01c4-4476-b870-e2695c6d6d22"
+    }
+    url = url + "api/college";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "6ecb4fc9-4853-41d9-b215-909aaf3e7bebb67a9d8a-d232-4cf3-b1a0-5f528ab13ab7"//"9138d1e4-35fa-43b6-a6ca-e7d33477fc8d50606e85-30f3-430d-b76e-a80b2d5bc9b9"
+        },
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Delete College
+    var ApiViewModel = {
+        custom: {
+            CollegeId:2
+        },
+        Token: "020990da-e5fc-4729-8e3a-392c4692ae1a7e1232a0-01c4-4476-b870-e2695c6d6d22"
+    }
+    url = url + "api/college";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "6ecb4fc9-4853-41d9-b215-909aaf3e7bebb67a9d8a-d232-4cf3-b1a0-5f528ab13ab7"//"9138d1e4-35fa-43b6-a6ca-e7d33477fc8d50606e85-30f3-430d-b76e-a80b2d5bc9b9"
+        },
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    //////Add Department
+    var ApiViewModel = {
+        custom: {
+            CollegeId:22,
+            DepartmentName: "Department 1"
+        },
+        Token: "0b9242d5-3c76-456e-b6ec-d84255880067"
+    }
+    url = url + "api/department";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////////Update Department
+    var ApiViewModel = {
+        custom: {
+            DepartmentId: 13,
+            DepartmentName: "New",
+
+        },
+        Token: "0b9242d5-3c76-456e-b6ec-d84255880067"
+    }
+    url = url + "api/department";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Delete Department
+    var ApiViewModel = {
+        custom: {
+            DepartmentId: 13
+        },
+        Token: "0b9242d5-3c76-456e-b6ec-d84255880067"
+    }
+    url = url + "api/department";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Get - college and department
+
+    url = url + "api/College";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"//"1683a94b-db8f-467a-b83b-ac91ef843ccddc430e13-a07d-4c89-a98a-b7f0e0def3e1"//
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+    ////////Add Class Detail
+    var ApiViewModel = {
+        custom: {
+            CollegeId: 24,
+            ClassName: "class Test",
+            IsPasswordProtected:false,
+            Password:"pass123",
+            DepartmentId: 53,
+            From: "11AM",
+            To: "01:00AM,11:45AM,11:46AM",
+            Day: "Sunday,Monday,Tuesday",
+            Location:"Dubai",
+            Link: "link 1",
+            ClassRoomNo:"5A",
+            BuildingNo: "A Block",
+            ExamName: "1,2,3,4,5,6,7",
+            //ExamDate :Date(),
+            ExamDate: "17/08/2015,17/08/2015,17/08/2015,17/08/2015,17/08/2015,17/08/2015,17/08/2015",
+            Notes :"Some Notes"
+        },
+        Token: "e4f9ef48-fda3-45a2-8c72-804da833ec44182caf58-53b1-45af-900b-b48fe0521dfa"
+    }
+    url = url + "api/class";
+
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "00cc4d67-f61e-4605-9ee1-c9d1d4d62c630da55bce-2977-411e-94c5-3f1018a67632"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Get - DepartmentFaculties
+
+    url = url + "api/DepartmentFaculties?departmentId=5";
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+    /*
+    ////FacultyClass
+    var ApiViewModel = {
+        custom:{
+            //FacultyId:2
+        },
+        Token: "96e81c05-a6d5-427e-92a9-3eb5f212246c1abd424e-bce9-4077-9dac-534fffa1af40"
+    }
+    url = url + "api/FacultyClass";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "2902d71f-181b-49d5-8edc-77d02a1962ed02d172f3-4a22-4f2e-9083-1ab19121385c"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+    /*
+    ////Faculty - Student can view their mark/other student mark
+    //Add
+    var sview1 = { ApplicationUserId: 4, ClassDetailId: 1, CanViewMark: true, CanViewOtherStudentMark: true };
+    var arr = [];
+    arr.push(sview1);
+    var ApiViewModel = {
+        custom: arr,
+        Token: "abd51663-88f0-481f-8800-367291f25435"
+    }
+    url = url + "api/StudentView";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Faculty - Student can view their mark/other student mark
+    //PUT
+
+    var sView1 = { StudentViewId: 2, CanViewMark: false, CanViewOtherStudentMark: false }
+    var arr = [];
+    arr.push(sView1);
+    var ApiViewModel = {
+        custom: arr,
+        Token: "abd51663-88f0-481f-8800-367291f25435"
+    }
+    url = url + "api/StudentView";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Faculty - Student can view their mark/other student mark
+    //Get
+    url = url + "api/StudentView?classId=2"; //specific student
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "0fd89278-5182-4d89-a6a3-8f4e58cd73e975c2f002-402b-475a-a180-5ee955ae6adc"
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+    /*
+    ////////Update Class Detail
+    var ApiViewModel = {
+        custom: {
+            ClassDetailId:1,
+            CollegeId: 1,
+            ClassName: "c#",
+            DepartmentId: 1,
+            From: "11AM",
+            To: "3PM",
+            Day: "day:thursday,time:3pm",
+            Link: "link 1",
+            ClassRoomNo:"5A",
+            BuildingNo:"B Block",
+            ExamDate :Date(),
+            Notes :"Some Notes 3"
+        },
+        Token: "68b0a2e1-5a05-4c3a-b49a-0219d296feec"
+    }
+    url = url + "api/class";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Delete Class Detail
+    var ApiViewModel = {
+        custom: {
+            ClassDetailId:2
+        },
+        Token: "7ae18917-01cb-4d96-bd88-73cfc2c0e3c3"
+    }
+    url = url + "api/class";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+    /*
+    //////Student Subscription
+    url = url + "api/StudentSubscription";
+
+    var ApiViewModel = {
+        custom: {
+            ClassId: 2,
+            Password: "pass123",
+        },
+        Token: "df3cdb92-78c5-4318-9251-23efb9f9935e"
+    }
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+    /*
+    //////Faculty Students
+    url = url + "api/FacultyStudents";
+    var ApiViewModel = {
+        Token: "96e81c05-a6d5-427e-92a9-3eb5f212246c1abd424e-bce9-4077-9dac-534fffa1af40"
+    }
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "2902d71f-181b-49d5-8edc-77d02a1962ed02d172f3-4a22-4f2e-9083-1ab19121385c"
+        },
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+
+
+    //////To Restrict Users by BroadCast,Message
+
+    /*
+    //Module - BroadCast // Message //All
+
+    //Add
+    url = url + "api/RestrictedUsers";
+    var user1 = { ClassDetailId: 1, ApplicationUserId: 8, Module: "BroadCast" };
+    var user2 = { ApplicationUserId: 5, Module: "Message" };
+    var user3 = { ApplicationUserId: 6, Module: "All" };
+    var arr = [];
+    arr.push(user3);
+    //arr.push(user2);
+    //arr.push(user3);
+    var ApiViewModel = {
+        custom: arr,
+        Token: "e0c047f1-ae77-44e0-8cdf-62017fde2207d801a352-aded-4b14-85b6-2baec495f925"
+    }
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "58800086-423d-488a-8865-aa7b5f546fdcb20db040-93fb-4fbb-ad6f-8f04a384d046"
+        },
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+    /*
+    //Update
+    //Module - BroadCast // Message //All
+    url = url + "api/RestrictedUsers";
+    var user1 = { RestrictedUserId: 4, Module: "All" };
+    var user2 = { RestrictedUserId: 5, Module: "All" };
+    var arr = [];
+    arr.push(user1);
+    arr.push(user2);
+    var ApiViewModel = {
+        custom: arr,
+        Token: "f655dc60-cc6e-4e96-8c45-dffa337a3ecf"
+    }
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+
+    */
+
+
+    /*
+    //Delete
+    //Module - BroadCast // Message //All
+    url = url + "api/RestrictedUsers";
+    var user1 = { RestrictedUserId: 4 };
+    var user2 = { RestrictedUserId: 5 };
+    var arr = [];
+    arr.push(user1);
+    arr.push(user2);
+    var ApiViewModel = {
+        custom: arr,
+        Token: "f655dc60-cc6e-4e96-8c45-dffa337a3ecf"
+    }
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+    /*
+    //url = url + "api/RestrictedUsers?ApplicationUserId=4"; //specific student restriction
+    //url = url + "api/RestrictedUsers?ApplicationUserId=4&ClassDetailId=2"; //specific student restriction
+    url = url + "api/RestrictedUsers?ClassDetailId=2"; //specific student restriction
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "0fd89278-5182-4d89-a6a3-8f4e58cd73e975c2f002-402b-475a-a180-5ee955ae6adc"
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+    /*
+    //////Add Broadcast
+    var theDate = new Date(2015, 02, 24);
+    var myNewDate = new Date(theDate);
+    myNewDate.setDate(myNewDate.getDate()+1);
+    var arr = [];
+    var bC1 = {
+        ClassId: 19,
+        Sub: "My Subject",
+        Message: "My Message",
+        Path_Picture: "Path_Picture",
+        Path_Doc: "Path_Doc",
+        Path_Video: "Path_Video",
+        Path_Voice: "Path_Voice",
+        //RestrictedUsers: [6],//id of student user
+        ScheduleDate: myNewDate
+    };
+    //arr.push(bC1);
+    var bC2 = {
+        ClassId: 19,
+        Sub: "Sub 4",
+        Message: "Message 4",
+        Path_Picture: "Path_Picture",
+        Path_Doc: "Path_Doc",
+        Path_Video: "Path_Video",
+        Path_Voice: "Path_Voice",
+        //RestrictedUsers: [6]//id of student user
+    };
+    var bC3 = {
+        "ClassId": 19,
+        "Sub": "My Subject",
+        "Message": "My Message",
+        "Path_Picture": "", "Path_Doc": "", "Path_Video": "", "Path_Voice": "", "RestrictedUsers": [38]
+        //,"ScheduleDate": "31/11/2015 59:59:00"
+    };
+    //arr.push(bC2);
+    arr.push(bC3);
+    url = url + "api/FacultyBroadcast";
+    var ApiViewModel = {
+        custom: arr,
+        Token: "dac1e46a-ce0d-4c16-bd45-df241591f11b52bc8114-a147-456b-b128-4deaf0d0b61b"
+    }
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+    /*
+    //////Update Broadcast
+    var theDate = new Date(2015, 02, 24);
+    var myNewDate = new Date(theDate);
+    myNewDate.setDate(myNewDate.getDate()+1);
+    var arr = [];
+    var bC1 = {
+        BroadCastId: 1,
+        Sub: "Sub 4",
+        Message: "Message 25",
+        Path_Picture: "Path_Picture",
+        Path_Doc: "Path_Doc",
+        Path_Video: "Path_Video",
+        Path_Voice: "Path_Voice",
+        RestrictedUsers: [],//id of user
+        ScheduleDate: myNewDate
+    };
+    arr.push(bC1);
+    var bC2 = {
+        BroadCastId: 4,
+        Sub: "Sub 3",
+        Message: "Message 15",
+        Path_Picture: "Path_Picture 2",
+        Path_Doc: "Path_Doc 2",
+        Path_Video: "Path_Video 2",
+        Path_Voice: "Path_Voice 2",
+        RestrictedUsers: []//id of user
+    };
+    arr.push(bC2);
+    url = url + "api/FacultyBroadcast";
+    var ApiViewModel = {
+        custom: arr,
+        Token: "58bfb3d0-cea2-4b14-b972-7c84cbc0313a"
+    }
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+    /*
+    //////Delete Broadcast
+
+    var arr = [];
+    var bC1 = {
+        BroadCastId: 5,
+    };
+    arr.push(bC1);
+    var bC2 = {
+        BroadCastId: 6
+    };
+    arr.push(bC2);
+    url = url + "api/FacultyBroadcast";
+    var ApiViewModel = {
+        custom: arr,
+        Token: "333dead7-34ec-47e4-baee-c653efcff18c43413704-950b-4587-b28f-3460c7311866"
+    }
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "0fd89278-5182-4d89-a6a3-8f4e58cd73e975c2f002-402b-475a-a180-5ee955ae6adc"
+        },
+        type: 'DELETE',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+
+    /*
+    url = url + "api/FacultyBroadcast?facultyId=39"; //specific faculty broadcast
+    //url = url + "api/FacultyBroadcast"; // all faculties broadcast
+    //url = url + "api/StudentBroadcast?studentId=6"; //specific student broadcast
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+    /*
+    //////Student Classes
+    url = url + "api/StudentClasses";
+    var ApiViewModel = {
+        Token: "2a49cdce-c1ce-4b0c-bdb9-3fcdab5f7e5a"
+    }
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    //Specific class details
+    url = url + "api/Class";
+    //url = url + "api/Class?classId=1";
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    //-- Student Schedule
+    var ApiViewModel = {
+        Token: "b31230e4-d3fd-48d3-80c6-c987894fa449"
+    }
+    url = url + "api/StudentSchedule";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    //-- Student Schedule - Dummy Faculty
+    var ApiViewModel = {
+        custom:{
+            ClassName:"test 12",
+            CollegeName: "CollegeName 1",
+            DepartmentName: "DepartmentName",
+            FacultyName: "FacultyName",
+            From: "From",
+            To: "To",
+            Day: "Day",
+            Link: "Link",
+            ClassRoomNo: "ClassRoomNo",
+            BuildingNo: "BuildingNo",
+            ExamDate: Date(),
+            ExamName: "ExamName",
+            Notes: "Notes",
+            Location: "Location",
+        },
+        Token: "c63fb8ac-fcf9-4fc5-9cd4-9e7fbba64ea0"
+    }
+    url = url + "api/StudentSchedule";
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+    /*
+    ////Student Schedule added class delete functionality
+    var ApiViewModel = {
+        custom: {
+            DummyFacultyId: 5
+        },
+        Token: "96e81c05-a6d5-427e-92a9-3eb5f212246c1abd424e-bce9-4077-9dac-534fffa1af40"
+    }
+    url = url + "api/StudentSchedule";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "2902d71f-181b-49d5-8edc-77d02a1962ed02d172f3-4a22-4f2e-9083-1ab19121385c"
+        },
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+    /*
+    ////Student Unsubscribe
+    var ApiViewModel = {
+        custom: {
+            BroadcastMapId: 90
+        },
+        Token: "b51524c2-3869-4696-a670-51b1b9c3d523fe2d1b2d-4e74-4907-b33a-d172901683b1"
+    }
+    url = url + "api/StudentSubscription";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Logout
+    var ApiViewModel = {
+        Token: "772097a7-5103-489f-aea6-d55bd22ddea5"
+    }
+    url = url + "api/Logout";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+    /*
+    ////Faculty Students
+    var ApiViewModel = {
+        Token: "c0110a47-ca67-43f5-a759-150a838ce0fe"
+    }
+    url = url + "api/FacultyStudents";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Delete User
+    var ApiViewModel = {
+        custom: {
+            ApplicationUserId: 12
+        },
+        Token: "5940acba-1458-40f3-8822-ae2b13b096f75d1129b3-e874-4942-abea-b382503fcc14"
+    }
+    url = url + "api/University";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        headers: {
+            "Token": "0fd89278-5182-4d89-a6a3-8f4e58cd73e975c2f002-402b-475a-a180-5ee955ae6adc"
+        },
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////BroadCast Message
+    var ApiViewModel = {
+        custom: {
+            BroadCastIdId: 8,
+            Message: "Hello Test"
+        },
+        Token: "b51524c2-3869-4696-a670-51b1b9c3d523fe2d1b2d-4e74-4907-b33a-d172901683b1"
+    }
+    url = url + "api/BroadCastMessage";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "00cc4d67-f61e-4605-9ee1-c9d1d4d62c630da55bce-2977-411e-94c5-3f1018a67632"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////BroadCast Message
+    var ApiViewModel = {
+        custom: {
+            BroadCastMessageId: 2
+        },
+        Token: "58bfb3d0-cea2-4b14-b972-7c84cbc0313a"
+    }
+    url = url + "api/BroadCastMessage";
+
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Get - BroadCast Message
+
+    url = url + "api/BroadCastMessage?broadCastId=8";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "00cc4d67-f61e-4605-9ee1-c9d1d4d62c630da55bce-2977-411e-94c5-3f1018a67632"
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+    /*
+    ////Email
+    var ApiViewModel = {
+        custom: {
+            BroadCastIdId: 1,
+            Message: "Hello Test"
+        },
+        Token: "018f873d-04ee-4c43-8dc6-a41ddbb627a5"
+    }
+    url = url + "api/Email";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Book Corner
+    var ApiViewModel = {
+        custom: {
+            CollegeId: 3,
+            DepartmentId: 7,
+            BookName: "Book 7",
+            PostedType: "AvailableBooks", // or "NeedBooks" // or "AvailableBooks"
+            AuthorName: "Author 1",
+            BookLanguage: "Arabic",
+            Description: "Description 1",
+            ImageUpload1: "Img1", //Not needed for NeedBooks
+            ImageUpload2: "Img2", //Not needed for NeedBooks
+            ImageUpload3: "Img3", //Not needed for NeedBooks
+            ImageUpload4: "Img4", //Not needed for NeedBooks
+        },
+        Token: "d809e3aa-b945-4ae2-8359-77994d0a90953523479d-616f-4402-995d-ccb641efdda0"
+    }
+    url = url + "api/BookCorner";
+
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "00cc4d67-f61e-4605-9ee1-c9d1d4d62c630da55bce-2977-411e-94c5-3f1018a67632"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Get - BookCorners
+    //url = url + "api/BookCorner?ApplicationUserId=5&PostedType=AvailableBooks";
+    url = url + "api/BookCorner?ApplicationUserId=44&PostedType=NeedBooks";
+    //url = url + "api/BookPost?ApplicationUserId=7";
+    //url = url + "api/BookPost";
+    //Not to use
+    ////url = url + "api/BookCorner?PostedType=NeedBooks";
+    ////url = url + "api/BookCorner?PostedType=AvailableBooks";
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "00cc4d67-f61e-4605-9ee1-c9d1d4d62c630da55bce-2977-411e-94c5-3f1018a67632"
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    ////Book Corner
+    var ApiViewModel = {
+        custom: {
+            BookId: 8
+        },
+        Token: "e0c047f1-ae77-44e0-8cdf-62017fde2207d801a352-aded-4b14-85b6-2baec495f925"
+    }
+    url = url + "api/BookCorner";
+
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "58800086-423d-488a-8865-aa7b5f546fdcb20db040-93fb-4fbb-ad6f-8f04a384d046"
+        },
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Book Corner - Update
+    var ApiViewModel = {
+        custom: {
+            BookId: 7,
+            BookName: "Book 71",
+            AuthorName: "Author 1",
+            BookLanguage: "Arabic",
+            Description: "Description 1",
+            ImageUpload1: "Img1", //Not needed for NeedBooks
+            ImageUpload2: "Img2", //Not needed for NeedBooks
+            ImageUpload3: "Img3", //Not needed for NeedBooks
+            ImageUpload4: "Img4", //Not needed for NeedBooks
+        },
+        Token: "e0c047f1-ae77-44e0-8cdf-62017fde2207d801a352-aded-4b14-85b6-2baec495f925"
+    }
+    url = url + "api/BookCorner";
+
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "58800086-423d-488a-8865-aa7b5f546fdcb20db040-93fb-4fbb-ad6f-8f04a384d046"
+        },
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Favourite Book
+    var ApiViewModel = {
+        custom: {
+            BookIds: [11]
+        },
+        Token: "58bfb3d0-cea2-4b14-b972-7c84cbc0313a"
+    }
+    url = url + "api/FavouriteBooks";
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+
+    /*
+    ////Favourite Book - Delete
+    var ApiViewModel = {
+        custom: {
+            FavouriteBookId: 2
+        },
+        Token: "a61277e8-87a2-4b21-ab35-01d7903f61e8"
+    }
+    url = url + "api/FavouriteBooks";
+
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+
+    /*
+    ////Get - Favourite Books
+    url = url + "api/FavouriteBooks?ApplicationUserId=8";
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "382c73ce-9842-491b-ad45-c8c4a378e6cef735b6a5-8db4-46c3-a047-6ef7517d1767"
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+    /*
+    ////ContactBookOwner
+    var ApiViewModel = {
+        custom: {
+            ToUserId: 2,
+            Subject: "Sub 1",
+            Body: "Body 1",
+            CustomField01:"",
+            BookId:"1",
+            BookName:"My Book"
+        },
+        Token: "f4e5904e-1f72-4e67-a87e-57cbc4252446a4796995-0edc-4f57-9a6b-1aa1e714490e"
+    }
+    url = url + "api/ContactBookOwner";
+
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "58800086-423d-488a-8865-aa7b5f546fdcb20db040-93fb-4fbb-ad6f-8f04a384d046"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////ContactBookOwner
+    var ApiViewModel = {
+        custom: {
+            ContactBookOwnerId: 1
+        },
+        Token: "d56954b4-89b9-450e-87f5-c149abbc0b81002c7d2b-3265-4c9f-a49e-be212771f502"
+    }
+    url = url + "api/ContactBookOwner";
+
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Get - ContactBookOwner
+
+    url = url + "api/ContactBookOwner?applicationUserId=246"; //to get frm specific users
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        headers: {
+            Token: "00cc4d67-f61e-4605-9ee1-c9d1d4d62c630da55bce-2977-411e-94c5-3f1018a67632"
+        },
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+    /*
+    ////TrafficNews
+    var ApiViewModel = {
+        custom: {
+            StreetName: "StreetName1",
+            Degree: "Degree",
+            Description: "Description",
+            ImagePath1:"ImagePath1"
+        },
+        Token: "651d935e-d481-49d0-895c-f7bfda2fb741f4272dea-1375-422a-b691-cfc5e1cd0092"
+    }
+    url = url + "api/TrafficNews";
+
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "00cc4d67-f61e-4605-9ee1-c9d1d4d62c630da55bce-2977-411e-94c5-3f1018a67632"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+    /*
+    ////TrafficNews
+    var ApiViewModel = {
+        custom: {
+            TrafficNewsId:1,
+            StreetName: "StreetName1",
+            Degree: "Degree",
+            Description: "Description",
+            ImagePath1:"ImagePath1"
+        },
+        Token: "8f2f016e-2a50-440c-9013-ac1bf063b531"
+    }
+    url = url + "api/TrafficNews";
+
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////TrafficNews
+    var ApiViewModel = {
+        custom: {
+            TrafficNewsId: 1
+        },
+        Token: "58bfb3d0-cea2-4b14-b972-7c84cbc0313a"
+    }
+    url = url + "api/TrafficNews";
+
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Get - TrafficNews
+
+    url = url + "api/TrafficNews?applicationUserId=1"; //to get frm specific users
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+    //eb0fb2e8-f719-4bcb-b2a3-518e29d337dd
+
+
+
+
+    /*
+    ////Compose Message
+    var ApiViewModel = {
+        custom: {
+            ToUserId: [2,3],
+            Subject: "Sub 31",
+            Body: "Body 1",
+            //ClassIds: [1, 2],
+            Path1: "Path 1",
+            Path2: "Path 2",
+            Path3: "Path 3",
+            Path4: "Path 4"
+        },
+        Token: "839e2f2b-262e-4d1c-a82c-1727aa02dff756668bd2-013c-472c-930e-3a5fc4267ff5"
+    }
+    url = url + "api/ComposeMessage";
+
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "58800086-423d-488a-8865-aa7b5f546fdcb20db040-93fb-4fbb-ad6f-8f04a384d046"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Compose Message
+    var ApiViewModel = {
+        custom: {
+            ComposeMessageId: 4 //MessageId property from Get Method
+        },
+        Token: "d56954b4-89b9-450e-87f5-c149abbc0b81002c7d2b-3265-4c9f-a49e-be212771f502"
+    }
+    url = url + "api/ComposeMessage";
+
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+    /*
+    ////Get - Compose Message
+
+    //url = url + "api/ComposeMessage?applicationUserId=5"; //to get frm specific users
+    url = url + "api/ComposeMessage?applicationUserId=2"; //to get frm specific users
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+    /*
+    ////Google Maps
+    var ApiViewModel = {
+        custom: {
+            CollegeId: 1,
+            DepartmentId: 1,
+            Latitude: "Latitude 1",
+            Longitude: "Longitude 1"
+        },
+        Token: "eb0fb2e8-f719-4bcb-b2a3-518e29d337dd"
+    }
+    url = url + "api/GoogleMap";
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+
+    */
+
+
+    /*
+    ////Google Maps
+    var ApiViewModel = {
+        custom: {
+            GoogleMapId:3,
+            CollegeId: 2,
+            DepartmentId: 3,
+            Latitude: "Latitude 2",
+            Longitude: "Longitude 2"
+        },
+        Token: "634207a1-ef7a-4d8b-9856-6d6dc973228a"
+    }
+    url = url + "api/GoogleMap";
+
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Google Map
+    var ApiViewModel = {
+        custom: {
+            GoogleMapId: 1
+        },
+        Token: "a61277e8-87a2-4b21-ab35-01d7903f61e8"
+    }
+    url = url + "api/GoogleMap";
+
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Get - GoogleMap
+
+    url = url + "api/GoogleMap";
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+    /*
+    ////ELearning
+    var ApiViewModel = {
+        custom: {
+            Title: "Title 2",
+            Link: "Link",
+            Website: "Website 1",
+            Desciption: "Desciption 1",
+            ImageUploadPath: "ImageUploadPath"
+        },
+        Token: "c5983519-36f7-4c6a-890f-86d6ac54025c"
+    }
+    url = url + "api/ELearning";
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+    /*
+    ////ELearning Update
+    var ApiViewModel = {
+        custom: {
+            ELearningId:1,
+            Title: "Title 21",
+            Link: "Link 2",
+            Website: "Website 2",
+            Desciption: "Desciption 1",
+            ImageUploadPath: "ImageUploadPath"
+        },
+        Token: "2cce6643-d076-4d5a-9a6f-b0b962b37ffe"
+    }
+    url = url + "api/ELearning";
+
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////ELearning Delete
+    var ApiViewModel = {
+        custom: {
+            ELearningId:1
+        },
+        Token: "2cce6643-d076-4d5a-9a6f-b0b962b37ffe"
+    }
+    url = url + "api/ELearning";
+
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+    /*
+    ////Get - ELearning
+
+    url = url + "api/ELearning?applicationUserId=3";
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+
+
+
+
+
+    /*
+    ////Setting
+    var ApiViewModel = {
+        custom: {
+            SettingId:1,
+            IsNotify: true,
+            IsSubscribe: false,
+            IsBroadcast: true,
+            IsTrafficNews: false,
+            IsMessage: true,
+            IsChat:true
+        },
+        Token: "279cabf9-ba55-493c-990b-2be311015c0d"
+    }
+    url = url + "api/Setting";
+
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Get - Setting
+
+    url = url + "api/Setting?applicationUserId=2";
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+
+    /*
+    ////TenantAddress
+    var ApiViewModel = {
+        Token: "d7fdc115-2588-4c34-a19e-d2cc63ee66b0"
+    }
+    url = url + "api/TenantAddress";
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+    /*
+    ////ContactUs
+    var ApiViewModel = {
+        custom: {
+            Name: "Name 1",
+            Email: "Email",
+            Address: "Address",
+            Contact: "Contact",
+            Message: "Message"
+        }
+    }
+    url = url + "api/ContactUs";
+
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "00cc4d67-f61e-4605-9ee1-c9d1d4d62c630da55bce-2977-411e-94c5-3f1018a67632"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////ContactUs
+    var ApiViewModel = {
+        custom: {
+            ContactUsId: 1
+        },
+        Token: "58bfb3d0-cea2-4b14-b972-7c84cbc0313a"
+    }
+    url = url + "api/ContactUs";
+
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Get - ContactUs
+    url = url + "api/ContactUs";
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    ////Get - HowToUse
+
+    url = url + "api/HowToUse";
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+    /*
+    ////How To Use
+    var ApiViewModel = {
+        custom: {
+            Name: "Name 1",
+            Paragraph: "Pg",
+            VideoPath: "VideoPath1,V2"
+        },
+        Token: "0b9242d5-3c76-456e-b6ec-d84255880067"
+    }
+    url = url + "api/HowToUse";
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////How To Use
+    var ApiViewModel = {
+        custom: {
+            HowToUseId: 12,
+            Name: "Name 2",
+            Paragraph: "Pg 2",
+            VideoPath: "VideoPath2,V2"
+        },
+        Token: "0b9242d5-3c76-456e-b6ec-d84255880067"
+    }
+    url = url + "api/HowToUse";
+
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////How To Use
+    var ApiViewModel = {
+        custom: {
+            HowToUseId: 12
+        },
+        Token: "0b9242d5-3c76-456e-b6ec-d84255880067"
+    }
+    url = url + "api/HowToUse";
+
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    ////Advertisement
+    /*
+    public enum Place
+    {
+        Top=1,
+        Center,
+        Bottom,
+        None
+    }
+    public enum Frequency
+    {
+        None = 0,
+        One,
+        Two,
+        Three,
+        Four
+    }
+    public enum Mode
+    {
+        All=1,
+        Add,
+        Edit,
+        Delete,
+        View
+    }
+    */
+
+    /*
+    var ApiViewModel = {
+        custom: {
+            Screen: "Broadcast",
+            Place: "Top",
+            Frequency: "Two",
+            Mode: "All",
+            ImagePath:"1.jpg;2.jpg"
+        },
+        Token: "0b9242d5-3c76-456e-b6ec-d84255880067"
+    }
+    url = url + "api/Advertisement";
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////////Update Advertisement
+    var ApiViewModel = {
+        custom: {
+            AdvertisementId: 1,
+            Screen: "Broadcast",
+            Place: "Top",
+            Frequency: "One",
+            Mode: "All",
+            ImagePath: "2.jpg;3.jpg"
+
+        },
+        Token: "0b9242d5-3c76-456e-b6ec-d84255880067"
+    }
+    url = url + "api/Advertisement";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Delete Advertisement
+    var ApiViewModel = {
+        custom: {
+            AdvertisementId: 1
+        },
+        Token: "0b9242d5-3c76-456e-b6ec-d84255880067"
+    }
+    url = url + "api/Advertisement";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Get - Advertisement
+
+    //url = url + "api/Advertisement?screen=Broadcast";
+    url = url + "api/Advertisement";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "00cc4d67-f61e-4605-9ee1-c9d1d4d62c630da55bce-2977-411e-94c5-3f1018a67632"//"9138d1e4-35fa-43b6-a6ca-e7d33477fc8d50606e85-30f3-430d-b76e-a80b2d5bc9b9"
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    //Feedback
+
+    var ApiViewModel = {
+        custom: {
+            ApplicationRating:4,
+            CustomKey1: "CustomKey 13",
+            CustomKeyValue1: 4,
+            CustomKey2: "CustomKey 22",
+            CustomKeyValue2: 5,
+            FeedbackStatement: "FeedbackStatement 1",
+            ProblemStatement: "ProblemStatement 1",
+            SuggestionStatement: "SuggestionStatement 1"
+        },
+        Token: "7320fa0d-f718-4747-abe3-74241be30f4e"
+    }
+    url = url + "api/Feedback";
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    //Feedback
+
+    var ApiViewModel = {
+        custom: {
+            FeedbackId: 1,
+        },
+        Token: "a61277e8-87a2-4b21-ab35-01d7903f61e8"
+    }
+    url = url + "api/Feedback";
+
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Get - Feedback
+
+    url = url + "api/Feedback";
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+
+
+    /*
+    ////Update Profile Detail
+    var ApiViewModel = {
+        custom: {
+            FirstName: "Admin",
+            LastName: "LastName",
+            Gender: "Female",
+            AccountType: "Admin",
+            RefId: "1",
+            ProfilePicturePath: "qq",
+            WorkIdPicturePath: "ww",
+            DOB:new Date(),
+            EmailAddress:"qw1@abc.com"
+        },
+        Token: "16f8eca6-554a-423f-be96-d7b1e24a363f"
+    }
+    url = url + "api/Profile";
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    ////Add Student Attendance
+    var st1 = { StudentId: 4, ClassDate: new Date(), IsAbsent: false, IsPresent: true, IsLate: false,LateTime: new Date()};
+    var st2 = { StudentId: 5, ClassDate: new Date(), IsAbsent: false, IsPresent: true, IsLate: false,LateTime: new Date()};
+    var arr = [];
+    arr.push(st1);
+    arr.push(st2);
+    var ApiViewModel = {
+        custom: {
+            ClassId: 1,
+            StudentAttendance_vm: arr
+        },
+        Token: "abd51663-88f0-481f-8800-367291f25435"
+    }
+    url = url + "api/StudentAttendance";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+    /*
+    ////Update Student Attendance
+    var st1 = { StudentAttendanceId: 1, ClassDate: new Date(), IsAbsent: false, IsPresent: true, IsLate: true,LateTime: new Date() };
+    var st2 = { StudentAttendanceId: 2, ClassDate: new Date(), IsAbsent: true, IsPresent: true, IsLate: true,LateTime: new Date() };
+    var arr = [];
+    arr.push(st1);
+    arr.push(st2);
+    var ApiViewModel = {
+        custom: arr,
+        Token: "2a379d96-5432-4be1-a7ab-d959ae3ddfe1"
+    }
+    url = url + "api/StudentAttendance";
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+    /*
+    ////Delete Student Attedndance
+    var st1 = { StudentAttendanceId: 1 };
+    var st2 = { StudentAttendanceId: 2 };
+    var arr = [];
+    arr.push(st1);
+    arr.push(st2);
+    var ApiViewModel = {
+        custom: arr,
+        Token: "2a379d96-5432-4be1-a7ab-d959ae3ddfe1"
+    }
+    url = url + "api/StudentAttendance";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+
+    /*
+    ////Get - StudentAttendance
+
+    url = url + "api/StudentAttendance?classId=2"; // for faculties
+    //url = url + "api/StudentAttendance?classId=1"; // for students other mark also
+    //url = url + "api/StudentAttendance?classId=1&userId=4"; // for students to view only their mark
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+    /*
+    ////Add Student Marks
+    var st1 = { StudentId: 3, ExamDate: new Date(), ExamName: "Term 1", Mark: 40 };
+    var st2 = { StudentId: 3, ExamDate: new Date(), ExamName: "Term 2", Mark: 55 };
+    var st3 = { StudentId: 8, ExamDate: new Date(), ExamName: "Term 2", Mark: 45 };
+    var arr = [];
+    arr.push(st1);
+    arr.push(st2);
+    arr.push(st3);
+    var ApiViewModel = {
+        custom: {
+            ClassId: 4,
+            StudentMark_vm: arr
+        },
+        Token: "78db3f74-4c64-48be-a5d3-e28be11170e1"
+    }
+    url = url + "api/StudentMarks";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    ////Update Student Marks
+    var st1 = { StudentMarkId: 1, ExamDate: new Date(), ExamName: "ExamName 3.1", Mark: 45 };
+    var st2 = { StudentMarkId: 2, ExamDate: new Date(), ExamName: "ExamName 4.1", Mark: 56 };
+    var arr = [];
+    arr.push(st1);
+    arr.push(st2);
+    var ApiViewModel = {
+        custom: arr,
+        Token: "2a379d96-5432-4be1-a7ab-d959ae3ddfe1"
+    }
+    url = url + "api/StudentMarks";
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+    /*
+    ////Delete Student Marks
+    var st1 = { StudentMarkId: 2 };
+    var st2 = { StudentMarkId: 4 };
+    var arr = [];
+    arr.push(st1);
+    arr.push(st2);
+    var ApiViewModel = {
+        custom: arr,
+        Token: "2a379d96-5432-4be1-a7ab-d959ae3ddfe1"
+    }
+    url = url + "api/StudentMarks";
+    //debugger;
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////Get - StudentMark
+
+    url = url + "api/StudentMarks?classId=24"; //faculty call
+    //url = url + "api/StudentMarks?classId=2"; //student call - to view also other student marks
+    //url = url + "api/StudentMarks?classId=2&userId=5"; //student call - to view his mark
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+    /*
+    ////Notification
+    url = url + "api/Notification";
+    var ApiViewModel = {
+        Token: "7d23d776-cebb-43ad-b74d-4254e68c05ff3b8e4ce8-f71f-4f7a-ad83-feb257738e76"
+    }
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+            var bookCornerCount = 0;
+            if (data) {
+                var bookCorner = $.grep(data, function (ele, ind) {
+                    return ele.Module === "BookCorner";//BroadCast //BookCorner //TrafficNews //Subscribe //UnSubscribe //Message
+                });
+                if (bookCorner) {
+                    bookCornerCount = bookCorner.length;
+                }
+            }
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    ////Notification
+    url = url + "api/Notification";
+    var arr = [];
+    arr.push(1);
+    arr.push(2);
+    var ApiViewModel = {
+        custom: arr,
+        Token: "9bf01192-aeb7-4b58-b64c-42e4f0a61326855873a8-8490-4c87-9a7a-06edc9d5cb90"
+    }
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "58800086-423d-488a-8865-aa7b5f546fdcb20db040-93fb-4fbb-ad6f-8f04a384d046"
+        },
+        type: 'PUT',
+        dataType: 'json',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+
+    */
+
+
+
+
+    /*
+    ////UserName Exists
+    var ApiViewModel = {
+        custom: {
+            UserName: "faculty12",
+        }
+    }
+    url = url + "api/User";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+            //alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+    //public enum MessageType
+    //{
+    //    All = 1,
+    //    OnlyMaleFaculty = 2,
+    //    OnlyFemaleFaculty = 3,
+    //    AllFaculty = 4,
+    //    OnlyMaleStudent = 5,
+    //    OnlyFemaleStudent = 6,
+    //    AllStudent = 7,
+    //}
+
+    /*
+    ////Admin Message
+    var dept = { CollegeId: 2 }; //  or var dept = { CollegeId:1,DepartmentId:1};
+    var ApiViewModel = {
+        custom: {
+            Message: "Hello Message 2",
+            MessageType: "All",
+            //Department: dept,//optional property
+        },
+        Token: "ef90f982-1619-417e-a680-d822296d8de299b5effc-88f5-429f-b0cd-7cc286435f40"
+    }
+    url = url + "api/AdminMessage";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+            //alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    ////////Admin Message Delete
+    var ApiViewModel = {
+        custom: {
+            AdminMessageId: 5
+        },
+        Token: "ef90f982-1619-417e-a680-d822296d8de299b5effc-88f5-429f-b0cd-7cc286435f40"
+    }
+    url = url + "api/adminmessage";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'Delete',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    url = url + "api/AdminMessage?applicationUserId=3"; //
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+
+
+    /*
+    ////Search Users
+    var ApiViewModel = {
+        custom: {
+            Name: "test",
+            IsExcludeStudent: true,
+            //ClassIds:[1,2]
+            //AccountType: "Faculty",// Faculty//Student/Admin,
+            //Module:"Message" // for student in composemessage
+        },
+        Token: "b51524c2-3869-4696-a670-51b1b9c3d523fe2d1b2d-4e74-4907-b33a-d172901683b1"
+    }
+    url = url + "api/UserSearch";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+            //alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    //////Add CollegeMap
+    var ApiViewModel = {
+        custom: {
+            CollegeId: 24,
+            Department: "Test",
+            Place: "Place 1",
+            Longitude: "Longitude 1",
+            Latitude: "Latitude 1"
+        },
+        Token: "92b5a497-a544-4c96-b1c6-386615153a29"
+    }
+    url = url + "api/collegemap";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    //////Update CollegeMap
+    var ApiViewModel = {
+        custom: {
+            CollegeMapId: 1,
+            CollegeId: 1,
+            Department: "Test",
+            Place: "Place 1",
+            Longitude: "Longitude 1",
+            Latitude: "Latitude 1"
+        },
+        Token: "a61277e8-87a2-4b21-ab35-01d7903f61e8"
+    }
+    url = url + "api/collegemap";
+    $.ajax({
+        url: url,
+        type: 'Put',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+    /*
+    //////Delete CollegeMap
+    var ApiViewModel = {
+        custom: {
+            CollegeMapId: 1
+        },
+        Token: "a61277e8-87a2-4b21-ab35-01d7903f61e8"
+    }
+    url = url + "api/collegemap";
+    $.ajax({
+        url: url,
+        type: 'Delete',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    url = url + "api/collegemap";
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+    /*
+    //////Add News
+    var ApiViewModel = {
+        custom: {
+            NewsType: "Two",//"One"
+            Title: "Title 2",
+            Description: "Description 1",
+        },
+        Token: "8f888a1f-4b51-4d4a-ad57-62b202b15f77"
+    }
+    url = url + "api/news";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    url = url + "api/news";
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    //////Attendance Detail
+    var ApiViewModel = {
+        custom: {
+            ClassId: 14
+        },
+        Token: "1923456f-9623-44e6-afec-0378febbb9127fe20f97-dec0-48dd-bf33-ad9ab9c21cc9"
+    }
+    url = url + "api/AttendanceDetails";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////Faculty Student Unsubscribe
+    var ApiViewModel = {
+        custom: {
+            ApplicationUserId: 33,
+            ClassId: 5
+        },
+        Token: "96e81c05-a6d5-427e-92a9-3eb5f212246c1abd424e-bce9-4077-9dac-534fffa1af40"
+    }
+    url = url + "api/FacultyUnSubscribe";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "2902d71f-181b-49d5-8edc-77d02a1962ed02d172f3-4a22-4f2e-9083-1ab19121385c"
+        },
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    ////AdminUsers
+    var ApiViewModel = {
+        Token: "5f2f6887-30d3-4255-8624-3fb6d2d5ab5b2d6dd68c-a929-42bc-a37b-d13db49e77b7"
+    }
+    url = url + "api/AdminUsers";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "eed35a4e-c2e2-4e93-b830-619a2cba7988856c7647-7e4e-4ad2-9c93-3e5c3ef6fc22"//"9138d1e4-35fa-43b6-a6ca-e7d33477fc8d50606e85-30f3-430d-b76e-a80b2d5bc9b9"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////AdminUsers
+    var ApiViewModel = {
+        custom: {
+            ApplicationUserId: 33,
+            FirstName: "FirstName",
+            LastName: "LastName",
+            LastName: "Male",
+            EmailAddress: "EmailAddress",
+            AccountType: "Admin",
+            RefId: "RefId",
+            ProfilePicturePath: "ProfilePicturePath",
+            WorkIdPicturePath: "WorkIdPicturePath",
+            DOB: new Date(),
+            Contact: "Contact"
+
+        },
+        Token: "5f2f6887-30d3-4255-8624-3fb6d2d5ab5b2d6dd68c-a929-42bc-a37b-d13db49e77b7"
+    }
+    url = url + "api/AdminUsers";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "eed35a4e-c2e2-4e93-b830-619a2cba7988856c7647-7e4e-4ad2-9c93-3e5c3ef6fc22"//"9138d1e4-35fa-43b6-a6ca-e7d33477fc8d50606e85-30f3-430d-b76e-a80b2d5bc9b9"
+        },
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+    /*
+    ////Chat
+    var ApiViewModel = {
+        custom: {
+            FromUserId: 3,
+            ToUserId: 7,
+            Message:"Hello"
+        },
+        Token: "666acc29-f5bc-47ec-988c-f3fd86f6f2424c512d09-c795-4190-abdf-cd1c2a2040f9"
+    }
+    url = url + "api/Chat";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "382c73ce-9842-491b-ad45-c8c4a378e6cef735b6a5-8db4-46c3-a047-6ef7517d1767"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+    /*
+    url = url + "api/chat?FromUserId=3&ToUserId=7";
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "382c73ce-9842-491b-ad45-c8c4a378e6cef735b6a5-8db4-46c3-a047-6ef7517d1767"
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+
+    /*
+    ////Device Update
+    var ApiViewModel = {
+        custom: {
+
+            DeviceType: "Device 1",
+            DeviceUDDI: "Token 1",
+            RegistrationId: "Regis",
+
+        },
+        Token: "0d46bd58-1a36-460b-b3b5-43f95de907718909b1ff-3989-4291-9b03-f5117c44d7ba"
+    }
+    url = url + "api/Device";
+
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "382c73ce-9842-491b-ad45-c8c4a378e6cef735b6a5-8db4-46c3-a047-6ef7517d1767"
+        },
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+    /*
+    ////Tenant Theme
+    var ApiViewModel = {
+        custom: {
+            CSSField1: "CSSField 1",
+            CSSField2: "CSSField 2",
+            CSSField3: "CSSField 3",
+            CSSField4: "CSSField 4",
+            CSSField5: "CSSField 5",
+
+        },
+        Token: "8eb7a060-4980-4675-96a8-9f3a2ab3e97e867efd8a-4147-4bc1-a20e-27d0f82458da"
+    }
+    url = url + "api/TenantTheme";
+    //debugger;
+    $.ajax({
+        url: url,
+        headers: {
+            "Token": "f9752143-f211-4261-8ce9-a1523941ae0aea93898f-4de5-4033-8a08-53f098dfed97"
+        },
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+
+    /*
+    ////TechnicalSupport
+    var ApiViewModel = {
+        custom: {
+            Question: "Question 1",
+            Details: "Details 1"
+
+        },
+        Token: "9bf01192-aeb7-4b58-b64c-42e4f0a61326855873a8-8490-4c87-9a7a-06edc9d5cb90"
+    }
+    url = url + "api/TechnicalSupport";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "58800086-423d-488a-8865-aa7b5f546fdcb20db040-93fb-4fbb-ad6f-8f04a384d046"
+        },
+        type: 'POST',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+
+    /*
+    //url = url + "api/TechnicalSupport?ApplicationUserId=31";//for specific user
+    //url = url + "api/TechnicalSupport";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "58800086-423d-488a-8865-aa7b5f546fdcb20db040-93fb-4fbb-ad6f-8f04a384d046"
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            debugger;
+        },
+        error: function (x, y, z) {
+            debugger;
+            alert(x + '\n' + y + '\n' + z);
+        }
+    });
+    */
+
+
+    /*
+    ////TechnicalSupport - Admin Answer
+    var ApiViewModel = {
+        custom: {
+            TechnicalSupportId: 1,
+            Answer: "Admin reply message"
+        },
+        Token: "5db61d87-dd5d-4f6e-bb1c-2ce9ab89da52f04ef084-b20d-4283-92d2-a8fa618d2e2e"
+    }
+    url = url + "api/TechnicalSupport";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'PUT',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+    */
+
+    
+    ////TechnicalSupport - Delete
+    var ApiViewModel = {
+        custom: {
+            TechnicalSupportId: 1,
+        },
+        Token: "2434bafb-7fa8-4111-9856-e8f429be9bc2f370cc7f-fd05-4fff-9f67-7f54022e6db0"
+    }
+    url = url + "api/TechnicalSupport";
+    $.ajax({
+        url: url,
+        headers: {
+            Token: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075"
+        },
+        type: 'DELETE',
+        data: JSON.stringify(ApiViewModel),
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            debugger;
+
+        },
+        error: function (x, y, z) {
+            debugger;
+        }
+    });
+
+    
+
+</script>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        <label for="fileUpload">
+            Select File to Upload: <input id="fileUpload" type="file" />
+
+            <input id="btnUploadFile" type="button" value="Upload File" /><br />
+            <input id="btnDownloadFile" type="button" value="Download File" />
+    </div>
+</body>
+</html>
+<script src="Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var url = "http://localhost:28472/";
+        //url = "http://www.acku.co/";
+        url = "http://www.uniteeky.com/";
+        $('#btnUploadFile').on('click', function () {
+            debugger;
+            var data = new FormData();
+            var files = $("#fileUpload").get(0).files;
+            data.append("TenantToken", "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075");
+            if (files.length > 0) {
+                data.append("UploadedImage", files[0]);
+            }
+            var ajaxRequest = $.ajax({
+                type: "POST",
+                url: url + "api/fileupload",
+                contentType: false,
+                processData: false,
+                data: data
+            });
+            ajaxRequest.done(function (xhr, textStatus) {
+                alert("done");
+                debugger;
+            });
+            ajaxRequest.fail(function (jqXHR, textStatus) {
+                debugger;
+                alert("error");
+            });
+        });
+
+
+        $('#btnDownloadFile').on('click', function () {
+            var filename = "~/UploadedFiles/5/a8719a18-0984-4779-8c78-8aa4704b8623/Introduction to ASP.NET MVC 4.pptx";
+            var ajaxRequest = $.ajax({
+                type: "GET",
+                url: url + "api/filedownload?fileName=" + filename,
+                headers: {
+                    TenantToken: "4be0005b-e8da-42d0-96b0-9f9acd059a270a5148fe-04b7-4519-a242-a796e6d08075",
+                    UserToken: "7d23d776-cebb-43ad-b74d-4254e68c05ff3b8e4ce8-f71f-4f7a-ad83-feb257738e76"
+                }
+            });
+
+            ajaxRequest.done(function (xhr, textStatus) {
+                debugger;
+            });
+        });
+
+
+
+    });
+
+
+</script>
+

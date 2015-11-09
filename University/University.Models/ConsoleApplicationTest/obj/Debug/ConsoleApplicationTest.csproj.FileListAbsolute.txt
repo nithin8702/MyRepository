@@ -1,0 +1,2 @@
+C:\Nithin\ThinkVidya\Ameer\Projects\University.Api\Source\University.Models\ConsoleApplicationTest\bin\Debug\ConsoleApplicationTest.exe.config
+C:\Users\Srinika\Documents\GitHub\MyRepository\University\University.Models\ConsoleApplicationTest\bin\Debug\ConsoleApplicationTest.exe.config

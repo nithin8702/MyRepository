@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "University.Common.Models", "University.Common.Models\University.Common.Models.csproj", "{11238C13-E960-4D72-9E5A-7A8C24CC4FBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "University.Security.Models", "University.Security.Models\University.Security.Models.csproj", "{E68CDC71-75A4-470D-8F08-7530258F82C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplicationTest", "ConsoleApplicationTest\ConsoleApplicationTest.csproj", "{7B8A1016-C7FE-4EFD-A2C3-F7B7CE4A8CEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "University.Context", "University.Context\University.Context.csproj", "{31E74AC5-A9F0-4271-91A8-77FC24A52CCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "University.Bussiness.Models", "University.Bussiness.Models\University.Bussiness.Models.csproj", "{54B87F2C-FB3C-45C1-833C-635C8E18F321}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://prasannaraja.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = University.Common.Models\\University.Common.Models.csproj
+		SccProjectName1 = University.Common.Models
+		SccLocalPath1 = University.Common.Models
+		SccProjectUniqueName2 = University.Security.Models\\University.Security.Models.csproj
+		SccProjectName2 = University.Security.Models
+		SccLocalPath2 = University.Security.Models
+		SccProjectUniqueName3 = ConsoleApplicationTest\\ConsoleApplicationTest.csproj
+		SccProjectName3 = ConsoleApplicationTest
+		SccLocalPath3 = ConsoleApplicationTest
+		SccProjectUniqueName4 = University.Context\\University.Context.csproj
+		SccProjectName4 = University.Context
+		SccLocalPath4 = University.Context
+		SccProjectUniqueName5 = University.Bussiness.Models\\University.Bussiness.Models.csproj
+		SccProjectName5 = University.Bussiness.Models
+		SccLocalPath5 = University.Bussiness.Models
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11238C13-E960-4D72-9E5A-7A8C24CC4FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11238C13-E960-4D72-9E5A-7A8C24CC4FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11238C13-E960-4D72-9E5A-7A8C24CC4FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11238C13-E960-4D72-9E5A-7A8C24CC4FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E68CDC71-75A4-470D-8F08-7530258F82C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E68CDC71-75A4-470D-8F08-7530258F82C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E68CDC71-75A4-470D-8F08-7530258F82C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E68CDC71-75A4-470D-8F08-7530258F82C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B8A1016-C7FE-4EFD-A2C3-F7B7CE4A8CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B8A1016-C7FE-4EFD-A2C3-F7B7CE4A8CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B8A1016-C7FE-4EFD-A2C3-F7B7CE4A8CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B8A1016-C7FE-4EFD-A2C3-F7B7CE4A8CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31E74AC5-A9F0-4271-91A8-77FC24A52CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31E74AC5-A9F0-4271-91A8-77FC24A52CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31E74AC5-A9F0-4271-91A8-77FC24A52CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31E74AC5-A9F0-4271-91A8-77FC24A52CCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54B87F2C-FB3C-45C1-833C-635C8E18F321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54B87F2C-FB3C-45C1-833C-635C8E18F321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54B87F2C-FB3C-45C1-833C-635C8E18F321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54B87F2C-FB3C-45C1-833C-635C8E18F321}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
