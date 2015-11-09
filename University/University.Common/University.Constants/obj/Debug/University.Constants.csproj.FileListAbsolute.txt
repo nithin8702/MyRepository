@@ -1,5 +1,0 @@
-C:\Nithin\ThinkVidya\Ameer\Projects\University.Api\Source\University.Common\University.Constants\bin\Debug\University.Constants.dll
-C:\Nithin\ThinkVidya\Ameer\Projects\University.Api\Source\University.Common\University.Constants\bin\Debug\University.Constants.pdb
-C:\Nithin\ThinkVidya\Ameer\Projects\University.Api\Source\University.Common\University.Constants\obj\Debug\University.Constants.csprojResolveAssemblyReference.cache
-C:\Nithin\ThinkVidya\Ameer\Projects\University.Api\Source\University.Common\University.Constants\obj\Debug\University.Constants.dll
-C:\Nithin\ThinkVidya\Ameer\Projects\University.Api\Source\University.Common\University.Constants\obj\Debug\University.Constants.pdb

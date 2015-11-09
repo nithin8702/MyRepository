@@ -1,5 +1,0 @@
-C:\Nithin\ThinkVidya\Ameer\Projects\University.Api\Source\University.Common\University.Utilities\bin\Debug\University.Utilities.dll
-C:\Nithin\ThinkVidya\Ameer\Projects\University.Api\Source\University.Common\University.Utilities\bin\Debug\University.Utilities.pdb
-C:\Nithin\ThinkVidya\Ameer\Projects\University.Api\Source\University.Common\University.Utilities\obj\Debug\University.Utilities.csprojResolveAssemblyReference.cache
-C:\Nithin\ThinkVidya\Ameer\Projects\University.Api\Source\University.Common\University.Utilities\obj\Debug\University.Utilities.dll
-C:\Nithin\ThinkVidya\Ameer\Projects\University.Api\Source\University.Common\University.Utilities\obj\Debug\University.Utilities.pdb
