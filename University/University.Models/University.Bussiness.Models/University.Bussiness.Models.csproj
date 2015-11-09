@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54B87F2C-FB3C-45C1-833C-635C8E18F321}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>University.Bussiness.Models</RootNamespace>
+    <AssemblyName>University.Bussiness.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="University.Common.Models">
+      <HintPath>..\CompiledAssemblies\University.Common.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="University.Context">
+      <HintPath>..\CompiledAssemblies\University.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="University.Security.Models">
+      <HintPath>..\CompiledAssemblies\University.Security.Models.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BookCorner.cs" />
+    <Compile Include="ComposeMessage.cs" />
+    <Compile Include="ContactBookOwner.cs" />
+    <Compile Include="DummyFaculty.cs" />
+    <Compile Include="ELearning.cs" />
+    <Compile Include="BroadCast.cs" />
+    <Compile Include="BroadCastMessage.cs" />
+    <Compile Include="ClassDetail.cs" />
+    <Compile Include="FavouriteBook.cs" />
+    <Compile Include="Notification.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestrictedUser.cs" />
+    <Compile Include="StudentClass.cs" />
+    <Compile Include="StudentAttendance.cs" />
+    <Compile Include="StudentMark.cs" />
+    <Compile Include="StudentSubscription.cs" />
+    <Compile Include="StudentView.cs" />
+    <Compile Include="TrafficNews.cs" />
+    <Compile Include="ViewModel\AuthenticateUser_vm.cs" />
+    <Compile Include="ViewModel\BookCorner_vm.cs" />
+    <Compile Include="ViewModel\Books_vm.cs" />
+    <Compile Include="ViewModel\BroadCastMessage_vm.cs" />
+    <Compile Include="ViewModel\Broadcast_vm.cs" />
+    <Compile Include="ViewModel\ClassDetail_vm.cs" />
+    <Compile Include="ViewModel\ComposeMessage_vm.cs" />
+    <Compile Include="ViewModel\ContactBookOwner_vm.cs" />
+    <Compile Include="ViewModel\ELearning_vm.cs" />
+    <Compile Include="ViewModel\FacultyStudents_vm.cs" />
+    <Compile Include="ViewModel\FavouriteBooks_vm.cs" />
+    <Compile Include="ViewModel\Notification_vm.cs" />
+    <Compile Include="ViewModel\RestrictedUser_vm.cs" />
+    <Compile Include="ViewModel\Statictics_vm.cs" />
+    <Compile Include="ViewModel\StudentBroadcast_vm.cs" />
+    <Compile Include="ViewModel\StudentClass_vm.cs" />
+    <Compile Include="ViewModel\StudentSubscription_vm.cs" />
+    <Compile Include="ViewModel\TrafficNews_vm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)\CompiledAssemblies</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<University.Common.Models.Log.ApiErrorLog>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Error Logs</h2>
+<table class="table">
+    <tr>
+        <th>Error ID</th>
+        <th>Log ID</th>
+        <th>Error</th>
+        <th>Stack Trace</th>
+        <th>Date</th>
+        <th>UserID</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ApiErrorLogId
+            </td>
+            <td>
+                @item.ApiDataLogId
+            </td>
+            <td>
+                @item.ErrorDetail
+            </td>
+            <td>
+                @item.StackTrace
+            </td>
+            <td>
+                @item.CreatedOn
+            </td>
+            <td>
+                @item.CreatedBy
+            </td>
+        </tr>
+    }
+
+</table>
