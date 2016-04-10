@@ -1,6 +1,0 @@
-C:\Nithin\Trainings\MVC\Samples\BNP\MetsWeb.Console\MetsWeb.Console\bin\Debug\MetsWeb.Console.exe.config
-C:\Nithin\Trainings\MVC\Samples\BNP\MetsWeb.Console\MetsWeb.Console\bin\Debug\MetsWeb.Console.exe
-C:\Nithin\Trainings\MVC\Samples\BNP\MetsWeb.Console\MetsWeb.Console\bin\Debug\MetsWeb.Console.pdb
-C:\Nithin\Trainings\MVC\Samples\BNP\MetsWeb.Console\MetsWeb.Console\obj\Debug\MetsWeb.Console.exe
-C:\Nithin\Trainings\MVC\Samples\BNP\MetsWeb.Console\MetsWeb.Console\obj\Debug\MetsWeb.Console.pdb
-C:\Nithin\Trainings\MVC\Samples\BNP\MetsWeb.Console\MetsWeb.Console\obj\Debug\MetsWeb.Console.csprojResolveAssemblyReference.cache
