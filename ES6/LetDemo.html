@@ -1,0 +1,31 @@
+﻿<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    function LetDemo() {
+        var varvariable = 123;
+        let letvariable = 456;
+        if (true) {
+            var varvariable = 888;
+            let letvariable = 999;
+            console.log(varvariable);
+            console.log(letvariable);
+        }
+        console.log(varvariable);
+        console.log(letvariable);
+    }
+    //LetDemo();
+
+    var arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = function () { console.log(i) };
+    }
+
+</script>
