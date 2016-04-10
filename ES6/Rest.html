@@ -1,0 +1,29 @@
+﻿
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    //Rest
+    function Person(f, l, ...restparam) {
+        console.log(restparam);
+        for (var i = 0; i < restparam.length; i++) {
+            console.log(restparam[i]);
+        }
+    }
+    Person("nithin", "rajan", 1, "hello", 3);
+
+
+    //Spread
+    function myfunction(a,b,c,d,e) {
+        console.log(a+b+c+d+e);
+    }
+    var tmp = [5,6,7,8];
+    myfunction(1,...tmp)
+</script>
