@@ -11,20 +11,26 @@
 </html>
 
 <script>
-    let s = new Set([10, 20, 30]);
-    console.log(s.has(40));
-    s.add(40);
-    console.log(s.has(40));
-    s.add(50);
-    s.add(40);
-    s.add(60);
-    //console.log(s);
-    for (let a of s)
-        console.log(a);
+    //let s = new Set([10, 20, 30]);
+    //console.log(s.has(40));
+    //s.add(40);
+    //console.log(s.has(40));
+    //s.add(50);
+    //s.add(40);
+    //s.add(60);
+    ////console.log(s);
+    //for (let a of s)
+    //    console.log(a);
 
-    for(let a of s.entries())
-        console.log(a);
+    //for(let a of s.entries())
+    //    console.log(a);
 
+    var mymap = new Map();
+    mymap.set(0, "zero");
+    mymap.set(1, "one");
+
+    for(var[key,value] of mymap)
+        console.log(key + " - " + value);
 
 </script>
 
