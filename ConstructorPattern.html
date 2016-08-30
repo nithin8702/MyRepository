@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="div1"></div>
+
+</body>
+</html>
+
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+
+    //Modular pattern
+    var ctrl = (function () {
+        var ele = null;
+        function CreateElement(tag) {
+            ele = document.createElement(tag);
+            return this;
+        }
+        function CreateId(val) {
+            ele.id = val;
+            return this;
+        }
+        function SetText(val) {
+            ele.value = val;
+            return this;
+        }
+        function Append(val) {
+            var container = document.getElementById(val);
+            container.appendChild(ele);
+        }
+        return {
+            Create: CreateElement,
+            Id: CreateId,
+            Text: SetText,
+            Container:Append
+        }
+    }());
+    ctrl.Create("input").Id("id1").Text("Hello World").Container("div1");
+    //////var ctrl = {
+    //////    ele: null,
+    //////    create: function (tag) {
+    //////        this.ele = document.createElement(tag);
+    //////        return this;
+    //////    },
+    //////    Id: function (val) {
+    //////        debugger;
+    //////        this.ele.id = val;
+    //////        return this;
+    //////    },
+    //////    Text:function (val) {
+    //////        this.ele.value = val;
+    //////        return this;
+    //////    },
+    //////    Container: function (val) {
+    //////        var container = document.getElementById(val);
+    //////        container.appendChild(this.ele);            
+    //////    }
+    //////};
+
+    //////debugger;
+    //////var txt = ctrl.create("input");
+    //////txt.Id("id1");
+    //////txt.Text("Hello World");
+    //////txt.Container("div1");
+
+
+
+
+
+    ////Mixin Pattern
+    //function Person(name) {
+    //    this.name = name;
+    //}
+    //function Dog(name) {
+    //    this.name = name;
+    //}
+    //var speaker = {
+    //    speak: function () {
+    //        console.log(this.name + " is speaking");
+    //    }
+    //}
+    //var mover = {
+    //    walk: function () {
+    //        console.log(this.name + " can walk");
+    //    },
+    //    run: function () {
+    //        console.log(this.name + " can run");
+    //    }
+    //}
+
+    //$.extend(Person.prototype, speaker, mover);
+    //$.extend(Dog.prototype, mover);
+
+    //var p = new Person("person 1");
+    //var d = new Dog("dog 1");
+
+
+    ////Inheritance Pattern
+    ////debugger;
+    //function Beverage(name) {
+    //    this.name = name;
+    //}
+    //Beverage.prototype.drink = function () {
+    //    console.log("i am drinking " + this.name);
+    //}
+
+
+    //function Coffee(type) {
+    //    //Beverage.call(this,"Coffee");
+    //    this.type = type;
+    //    //this.name = "coffee";
+    //}
+    //Coffee.prototype = Beverage.prototype;
+    //Coffee.prototype.sip = function () {
+    //    //this.name = "coffee";
+    //    console.log("am sipping " + this.name + this.type);
+    //}
+
+    //var obj1 = new Coffee("cold coffee");
+    //var obj2 = new Coffee("ice coffee");    
+    //obj1.sip();
+
+
+
+
+
+    ////Constructor Pattern
+    //function Person(f,l) {
+    //    this.fName = f;
+    //    this.lName = l;
+        
+    //}
+    //Person.prototype.fullName = function () {
+    //    return this.fName + " " + this.lName;
+    //}
+    //debugger;
+    //var ab = new Person("a", "b");
+    //var cd = new Person("c", "d");
+    //var result = (ab.fullName === cd.fullName)
+    //console.log(result);
+
+
+</script>
