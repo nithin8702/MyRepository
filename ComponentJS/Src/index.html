@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="Styles/bootstrap.min.css">
+    <link rel="stylesheet" href="Styles/font-awesome.min.css">
+</head>
+
+<body>
+    <div class='container'>
+
+        <form action=''>
+            <h2>Client Side Framework</h2>
+            <div class='row'>
+                <div id='container1'></div>
+            </div>
+            <div class='row'>
+                <div id='container2'></div>
+            </div>
+            <div class='row'>
+                <div id='container3'></div>
+            </div>
+            <div class='row'>
+                <input type='button' onclick='GetText();' class="btn btn-info" value="Click Here" />
+            </div>
+            <div class="row">
+                <div class='col-md-12 form-group'>
+                    <div class="col-md-12" id='filtergrid'>
+                    </div>
+                    <div class='col-md-12'>
+                        <div id="griddiv">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>
+
+
+<script type="text/javascript" src="Scripts/ComponentJS/Frameworks/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="Scripts/ComponentJS/Frameworks/bootstrap.min.js"></script>
+<script type="text/javascript" src="Scripts/ComponentJS/Prototype/Configuration.js"></script>
+<script type="text/javascript" src="Scripts/ComponentJS/Prototype/Constants.js"></script>
+<script type="text/javascript" src="Scripts/ComponentJS/Prototype/Base.js"></script>
+<script type="text/javascript" src="Scripts/ComponentJS/Utilities/FormElements.js"></script>
+<script type="text/javascript" src="Scripts/ComponentJS/Controls/Label.js"></script>
+<script type="text/javascript" src="Scripts/ComponentJS/Controls/Inputs/Input.js"></script>
+<script type="text/javascript" src="Scripts/ComponentJS/Controls/Inputs/Textbox.js"></script>
+<script type="text/javascript" src="Scripts/ComponentJS/Controls/Inputs/CheckBox.js"></script>
+<script type="text/javascript" src="Scripts/ComponentJS/Controls/Repeater.js"></script>
+<script type="text/javascript" src="Scripts/ComponentJS/Utilities/Dictionary.js"></script>
+
+<script>
+
+    // var arr = [
+    //     { Element: ComponentJS.Constants.HtmlElement.Textbox, Id: 'txt1', Text: 'Hello', Container: 'container1' },
+    //     { Element: ComponentJS.Constants.HtmlElement.Textbox, Id: 'txt2', Text: 'World', Container: 'container2' },
+    //     { Element: ComponentJS.Constants.HtmlElement.Checkbox, Id: 'chk1', Text: 'Male', Container: 'container3' },
+    // ];
+    // ComponentJS.FormElements().Render(arr);
+
+$(document).ready(function () {
+        var model = [
+            { ColumnName: 'EmployeeId', DisplayName: 'EmployeeId', IsVisible: true, IsSortable: true, Sequence: 0 },
+            { ColumnName: 'FirstName', DisplayName: 'FirstName', IsVisible: true, Sequence: 2 },
+            { ColumnName: 'LastName', DisplayName: 'LastName', IsVisible: true, Sequence: 1 },
+            { ColumnName: 'Age', DisplayName: 'Age' },
+        ]
+        var url = "http://localhost/staticdata/api/employees1";
+        var arr = [
+
+            {
+                Element: ComponentJS.Constants.HtmlElement.Repeater, Id: 'modulegrid', Container: 'griddiv', Key: 'EmployeeId',
+                Columns: model, Url: url, Filter: Filter, FilterId: 'filtergrid', Template: GridTemplate, Rows: 4,
+            },
+        ];
+        //debugger;
+        ComponentJS.FormElements().Render(arr);
+        function Filter(take, currentPage) {
+            return {
+                take: take, currentPage: currentPage
+            };
+        }
+        function GridTemplate(row, gridColumns) {
+            var tds = '';
+            var key = 'EmployeeId';
+            var length = gridColumns.length;
+            for (var i = 0; i < length; i++) {
+                var column = gridColumns[i];
+                if (column.IsVisible) {
+                    if (column.ColumnName === key)
+                        tds += "<td>" + "<a onclick='MyCustomClick(" + row[key] + ");' href='javascript:void(0)'>" + row.EmployeeId + '</a>' + "</td>";
+                    else
+                        tds += "<td>" + row[column.ColumnName] + "</td>";
+                }
+            }
+            return tds;
+        }
+    });
+
+    function GridDataSource(take, currentPage) {
+        var url = "http://localhost/staticdata/api/employees";
+        //url = "?take=" + take + "&currentPage=" + currentPage;
+        //var search = { EmployeeId: 11, FirstName: 'some user' };
+        $.get(url, { take: take, currentPage: currentPage })
+            .done(function (json) {
+                debugger;
+                var element = ComponentJS.GetElementById('mytable');
+                if (element) {
+                    element.Update(json.DataSource, json.Count);
+                }
+            }).fail(function () {
+                alert("error");
+            });
+    }
+    function MyCustomClick() {
+        alert('Link Clicked.');
+    }
+
+
+
+    //TextBox
+    // ComponentJS.Label().Id('lbl1').Container('container1').Text('Enter Name : ').Render();
+    // ComponentJS.Textbox().Id('txt1').Container('container1').Text('hello 123').Render();
+    // ComponentJS.Textbox().Id('txt2').Container('container2').Text('hello 456').Render();
+    //debugger;
+
+
+
+    //debugger;
+    //ComponentJS.Checkbox().Id('chk1').Container('container3').Text('Male 2').Render();
+    // var dict = new ComponentJS.Dictionary();
+    // dict.Add("tn", "tamilnadu");
+    // dict.Add("kl", "kerala");
+    // console.log(dict.Find('tn'));
+
+
+    // var arr = [
+    //     { Element: ComponentJS.Constants.HtmlElement.Textbox, Id: 'txt1', Text: 'Hello', Container: 'container1' },
+    //     { Element: ComponentJS.Constants.HtmlElement.Textbox, Id: 'txt2', Text: 'World', Container: 'container2' },
+    //     { Element: ComponentJS.Constants.HtmlElement.Checkbox, Id: 'chk1', Text: 'Male', Container: 'container3' },
+    // ];
+    // ComponentJS.FormElements().Render(arr);
+
+    function GetText() {
+        var txt1 = ComponentJS.GetElementById('txt1');
+        if (txt1) {
+            console.log('Id : ' + txt1.id);
+            console.log('GetText() : ' + txt1.GetText());
+            console.log('GetDefaultText() : ' + txt1.GetDefaultText());
+        }
+        var txt2 = ComponentJS.GetElementById('txt2');
+        if (txt2) {
+            console.log('Id : ' + txt2.id);
+            console.log('GetText() : ' + txt2.GetText());
+            console.log('GetDefaultText() : ' + txt2.GetDefaultText());
+        }
+    }
+
+
+
+</script>
