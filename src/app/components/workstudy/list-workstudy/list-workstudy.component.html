@@ -1,0 +1,115 @@
+<div class="panel-heading">List of Work Studies</div>
+<div class="panel-body">
+  <div class="">
+    <button id="btnAdd" (click)='btnclick()' class="btn btn-success btn-large"><i class="fa fa-plus" aria-hidden="true"></i> Create New Work Study</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <div>
+      <label for="searchWorkStudy" class="cols-sm-2 control-label">Work Study Number</label>
+      <div class="cols-sm-10">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+          <input type="text" value="" id="searchWorkStudy" name="searchWorkStudy" class="form-control" placeholder="Enter Work Study Number"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="searchStudyType" class="cols-sm-2 control-label">Study Type</label>
+      <div class="cols-sm-10">
+        <!--make this drop down DropDownList-->
+        <!--@Html.DropDownList("searchStatusCode", ViewBag.ddStatus as IEnumerable<SelectListItem>, new { @class = "show-tick" })-->
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+          <input type="text" value="" id="searchStudyType" name="searchStudyType" class="form-control" placeholder="Enter Study Type"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="searchLocation" class="cols-sm-2 control-label">Location</label>
+      <div class="cols-sm-10">
+        <!--make this drop down DropDownList-->
+        <!--@Html.DropDownList("searchStatusCode", ViewBag.ddStatus as IEnumerable<SelectListItem>, new { @class = "show-tick" })-->
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+          <input type="text" value="" id="searchLocation" name="searchLocation" class="form-control" placeholder="Enter Location" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="searchStudyStatus" class="cols-sm-2 control-label">Study Status</label>
+      <div class="cols-sm-10">
+        <!--make this drop down DropDownList-->
+        <!--@Html.DropDownList("searchStatusCode", ViewBag.ddStatus as IEnumerable<SelectListItem>, new { @class = "show-tick" })-->
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+          <input type="text" value="" id="searchStudyStatus" name="searchStudyStatus" class="form-control" placeholder="Enter Study Status"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="searchFromDate" class="cols-sm-2 control-label"> From Started Date</label>
+      <div class="cols-sm-10">
+        <div class="input-group">
+          <input type="text" id="searchFromDate" name="searchFromDate" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="searchToDate" class="cols-sm-2 control-label"> To Started Date</label>
+      <div class="cols-sm-10">
+        <div class="input-group">
+          <input type="text" id="searchToDate" name="searchToDate" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="" class="cols-sm-2 control-label"></label>
+      <div class="cols-sm-10">
+        <button id="btnSearch" class="btn btn-primary btn-large"><i class="fa fa-search" aria-hidden="true"></i> Search</button>        &nbsp;&nbsp;&nbsp;
+        <button id="btnClear" class="btn btn-primary btn-large"><i class="fa fa-times" aria-hidden="true"></i> Clear</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Desc</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ws of workStudies">
+      <td>{{ ws.WorkStudyID }}</td>
+      <td>{{ ws.StudyDescription }}</td>
+      <td>{{ ws.StudyTitle }}</td>
+    </tr>
+  </tbody>
+</table>

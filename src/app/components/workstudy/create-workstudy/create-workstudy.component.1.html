@@ -1,0 +1,178 @@
+<div class="panel-body">
+  <form action="" class="" [formGroup]='createworkstudyform' (ngSubmit)='save()'>
+
+    <div class="row">
+      <div class="col-md-6">
+        <!--Required field-->
+        <div class="form-group" [ngClass]="{'has-error':(!createworkstudyform.get('WorkStudyID').valid && createworkstudyform.get('WorkStudyID').touched )}">
+          <label for=">WorkStudyID" class="cols-sm-2 control-label">Work Study ID </label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <input value="" id="WorkStudyID" name="WorkStudyID" formControlName='WorkStudyID' class="form-control" placeholder="Enter Work Study ID"
+              />
+              <div *ngIf="createworkstudyform.get('WorkStudyID').touched && createworkstudyform.get('WorkStudyID').hasError('required')"
+                class="alert alert-danger">Please enter Study Title.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!--drop box feeding from table RNDStudyType.TypeDesc - sort by RNDStudyType.TypeStudy -->
+        <div class="form-group" [ngClass]="{'has-error':(!createworkstudyform.get('StudyType').valid && createworkstudyform.get('StudyType').touched )}">
+          <label for="StudyType" class="cols-sm-2 control-label">Study Type</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <input value="" id="StudyType" name="StudyType" formControlName='StudyType' class="form-control" placeholder="Enter Study Type"
+              />
+              <!--<select name="StudyType1" id="StudyType1">
+                <option *ngFor='let item of studyTypes' value='item.value'>{{item.text}}</option>
+              </select>-->
+              <div *ngIf="createworkstudyform.get('StudyType').touched && createworkstudyform.get('StudyType').hasError('required')" class="alert alert-danger">Please enter Study Type.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <!--big text box - that would able to fit 40 chars -for validations not required field-->
+        <div class="form-group" [ngClass]="{'has-error':(!createworkstudyform.get('StudyDescription').valid && createworkstudyform.get('StudyDescription').touched )}">
+          <label for="StudyDescription" class="cols-sm-2 control-label">Study Description </label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <input value="" id="StudyDescription" name="StudyDescription" formControlName='StudyDescription' class="form-control" placeholder="Enter Study Description"
+              />
+              <div *ngIf="createworkstudyform.get('StudyDescription').touched && createworkstudyform.get('StudyDescription').hasError('required')"
+                class="alert alert-danger">Please enter Study Title.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <!--drop box feeding from table StudyStatus.StatusDesc - sort by StudyStatus.StudyStatus -->
+        <div class="form-group" [ngClass]="{'has-error':(!createworkstudyform.get('StudyStatus').valid && createworkstudyform.get('StudyStatus').touched )}">
+          <label for="StudyStatus" class="cols-sm-2 control-label">StudyStatus</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <input value="" id="StudyStatus" name="StudyStatus" formControlName='StudyStatus' class="form-control" placeholder="Enter Study Status"
+              />
+              <div *ngIf="createworkstudyform.get('StudyStatus').touched && createworkstudyform.get('StudyStatus').hasError('required')"
+                class="alert alert-danger">Please enter Study Status.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <!--for validation not a required field-->
+        <div class="form-group" [ngClass]="{'has-error':(!createworkstudyform.get('PlannedOutsideCost').valid && createworkstudyform.get('PlannedOutsideCost').touched )}">
+          <label for="PlannedOutsideCost" class="cols-sm-2 control-label">PlannedOutsideCost</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <input value="" id="PlannedOutsideCost" name="PlannedOutsideCost" formControlName='PlannedOutsideCost' class="form-control"
+                placeholder="Enter Planned Outside Cost" />
+              <div *ngIf="createworkstudyform.get('PlannedOutsideCost').touched && createworkstudyform.get('PlannedOutsideCost').hasError('required')"
+                class="alert alert-danger">Please enter Planned Outside Cost.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!--for validation not a required field-->
+        <div class="form-group" [ngClass]="{'has-error':(!createworkstudyform.get('ActualOutsideCost').valid && createworkstudyform.get('ActualOutsideCost').touched )}">
+          <label for="ActualOutsideCost" class="cols-sm-2 control-label">ActualOutsideCost</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <input value="" id="ActualOutsideCost" name="ActualOutsideCost" formControlName='ActualOutsideCost' class="form-control"
+                placeholder="Enter Planned Outside Cost" />
+              <div *ngIf="createworkstudyform.get('ActualOutsideCost').touched && createworkstudyform.get('ActualOutsideCost').hasError('required')"
+                class="alert alert-danger">Please enter Planned Outside Cost.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group" [ngClass]="{'has-error':(!createworkstudyform.get('StartedDate').valid && createworkstudyform.get('StartedDate').touched )}">
+          <label for="StartedDate" class="cols-sm-2 control-label">StartedDate</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <div class="input-group date">
+                <input value="" id="StartedDate" name="StartedDate" formControlName='StartedDate' class="form-control" placeholder="Enter Started Date"
+                />
+              </div>
+              <div *ngIf="createworkstudyform.get('StartedDate').touched && createworkstudyform.get('StartedDate').hasError('required')"
+                class="alert alert-danger">Please enter Started Date.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group" [ngClass]="{'has-error':(!createworkstudyform.get('DueDate').valid && createworkstudyform.get('DueDate').touched )}">
+          <label for="DueDate" class="cols-sm-2 control-label">DueDate</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <div class="input-group date">
+                <input value="" id="DueDate" name="DueDate" formControlName='DueDate' class="form-control" placeholder="Enter DueDate" />
+              </div>
+              <div *ngIf="createworkstudyform.get('DueDate').touched && createworkstudyform.get('DueDate').hasError('required')" class="alert alert-danger">Please enter DueDate.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group" [ngClass]="{'has-error':(!createworkstudyform.get('CompletedDate').valid && createworkstudyform.get('CompletedDate').touched )}">
+          <label for="CompletedDate" class="cols-sm-2 control-label">CompletedDate</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <div class="input-group date">
+                <input value="" id="CompletedDate" name="CompletedDate" formControlName='CompletedDate' class="form-control" placeholder="Enter CompletedDate"
+                />
+              </div>
+              <div *ngIf="createworkstudyform.get('CompletedDate').touched && createworkstudyform.get('CompletedDate').hasError('required')"
+                class="alert alert-danger">Please enter CompletedDate.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class="col-md-4">
+        <div class="form-group">
+          <!--<div class="cols-sm-10">-->
+          <button class="btn btn-danger" type='submit' [disabled]='!createworkstudyform.valid'>Cancel</button>
+          <!--</div>-->
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <!--<div class="cols-sm-10">-->
+          <button class="btn btn-success" type='submit' [disabled]='!createworkstudyform.valid'>Save</button>
+          <!--</div>-->
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <!--<div class="cols-sm-10">-->
+          <button class="btn btn-warning" type='submit' [disabled]='!createworkstudyform.valid'>Assign Material to Study</button>
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,4 @@
+<li *ngFor="let menu of menus">
+  <a href="#" [routerLink]='menu.routerLink'><span class="fa-stack fa-lg pull-left"><i [ngClass]="menu.icon" style="color:coral"></i></span>{{menu.text}}</a>
+  <!--<a href="#" (click)='routes()'><span class="fa-stack fa-lg pull-left"><i [ngClass]="menu.icon" style="color:coral"></i></span>{{menu.text}}</a>-->
+</li>

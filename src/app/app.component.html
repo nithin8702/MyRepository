@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div id="wrapper">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+
+      <li class="active">
+        <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> Dashboard</a>
+      </li>      
+      <li id="liadmin">
+        <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-lock fa-stack-1x " style="color:coral"></i></span>Work Study Option</a>
+        <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+          <app-menu [menus]='wsMenus'></app-menu>
+        </ul>
+      </li>
+      <li>
+        <a href="~/Admin/PrintRoster"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-print fa-stack-1x " style="color:chartreuse"></i></span>Import Test Data</a>
+        <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+          <app-menu [menus]='tdMenus'></app-menu>
+        </ul>
+      </li>
+      <input type="hidden" name="hdnPermission" id="hdnPermission" value="@GetUserPermission()" />
+      <app-menu [menus]='reportMenus'></app-menu>
+      <app-menu [menus]='helpMenus'></app-menu>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="panel panel-primary">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
